@@ -22,7 +22,7 @@
 ```
 #### Upload Request Body
 ```text
-from-data -> file
+form-data -> file
 ```
 #### Upload Response Body
 ```json
