@@ -4,6 +4,7 @@ import (
 	"Alice/model"
 	"Alice/util"
 	"os"
+	"strconv"
 	"strings"
 
 	"github.com/gin-gonic/gin"
@@ -24,8 +25,12 @@ func Chat(ctx *gin.Context) {
 		message := strings.TrimLeft(data.Message[len("/setting"):], " ")
 		// TODO: 功能回复
 		if message == "getUID" {
-			// UID为用户唯一标识信息
-			util.Success(ctx, nil, data.Uid)
+			// UID 为用户唯一标识信息
+			util.Success(ctx, nil, "您的UID为："+data.Uid)
+			return
+		} else if message == "getVersion" {
+			// Version 为用户客户端版本
+			util.Success(ctx, nil, "您当前使用的Alice版本为："+strconv.FormatFloat(float64(data.Version), 'f', -1, 32))
 			return
 		}
 		util.Success(ctx, nil, message)

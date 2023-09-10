@@ -9,6 +9,7 @@
 ```json
 {
     "uid": "123",
+    "version": 1.0,
     "message": "/start"
 }
 ```
