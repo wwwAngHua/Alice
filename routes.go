@@ -20,13 +20,13 @@ func CollectRoute(route *gin.Engine) *gin.Engine {
 		// 学习助手
 		lean := robot.Group("/lean")
 		{
-			lean.POST("/chat", controller.Chat)     // 交谈
+			lean.POST("/chat", controller.LeanChat) // 交谈
 			lean.POST("/upload", controller.Upload) // 上传文件
 		}
 		// 帮助
 		help := robot.Group("/help")
 		{
-			help.POST("/chat", controller.Chat)     // 交谈
+			help.POST("/chat", controller.HelpChat) // 交谈
 			help.POST("/upload", controller.Upload) // 上传文件
 		}
 	}
