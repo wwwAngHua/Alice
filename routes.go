@@ -29,6 +29,12 @@ func CollectRoute(route *gin.Engine) *gin.Engine {
 			help.POST("/chat", controller.HelpChat) // 交谈
 			help.POST("/upload", controller.Upload) // 上传文件
 		}
+		// 免费图床
+		image := robot.Group("/image")
+		{
+			image.POST("/chat", controller.ImageChat)     // 交谈
+			image.POST("/upload", controller.ImageUpload) // 上传文件
+		}
 	}
 
 	// No router
