@@ -35,6 +35,12 @@ func CollectRoute(route *gin.Engine) *gin.Engine {
 			image.POST("/chat", controller.ImageChat)     // 交谈
 			image.POST("/upload", controller.ImageUpload) // 上传文件
 		}
+		// 电影解析
+		movie := robot.Group("/movie")
+		{
+			movie.POST("/chat", controller.MovieChat) // 交谈
+			movie.POST("/upload", controller.Upload)  // 上传文件
+		}
 	}
 
 	// No router
