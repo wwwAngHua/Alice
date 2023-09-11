@@ -113,7 +113,7 @@ func queryQuestionResult(id string) (string, error) {
 	url := fmt.Sprintf("https://api.takomo.ai/inferences/%s", id)
 	token := "Bearer tk_fe27c5cc1131de0fe83dd38fc2e839bc29ea95fb4497bf3d495791eee0c98fe1a4aff59973f5e43eba91672111c3d600"
 
-	for i := 0; i < 5; i++ {
+	for i := 0; i < 10; i++ {
 		req, err := http.NewRequest("GET", url, nil)
 		if err != nil {
 			return "", err
